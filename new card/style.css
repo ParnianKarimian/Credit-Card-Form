@@ -1,0 +1,264 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body {
+    height: 100%;
+    /* background-color: #e2e2e2; */
+    background: url(img/5.jpg) no-repeat top left / cover;
+}
+
+.container {
+    width: 100%;
+    height: 1px;
+    margin: 3% auto;
+}
+
+.ui {
+    border: 0;
+    box-shadow: 0 0 10px 0 rgb(149, 184, 209, .5);
+    border-radius: 10px;
+    width: 50%;
+    margin: 0 auto;
+    padding: 10%;
+    display: flex;
+    gap: 20px;
+    background-color: rgba(255, 255, 255, 0.368);
+    backdrop-filter: blur(8px);
+}
+
+.container-left {
+    width: 50%;
+    z-index: 1;
+
+}
+
+.container-right {
+    z-index: 999;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    perspective: 1000px;
+}
+
+.card {
+    width: 360px;
+    height: 230px;
+    margin: 0 auto;
+    background: linear-gradient(45deg, rgba(21, 20, 48, 0.781), rgba(113, 164, 137, 0.877), rgba(20, 45, 129, 0.777) 100%);
+    border: 1px solid rgba(0, 0, 0, .3);
+    border-radius: 15px;
+    position: absolute;
+    transform-style: preserve-3d;
+    transition: all 0.5s ease;
+
+    &:hover {
+        transform: rotateY(180deg);
+    }
+}
+
+.the-front {
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    position: absolute;
+}
+
+.the-back {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(21, 20, 48, 0.781), rgba(86, 160, 120, 0.877), rgba(20, 45, 129, 0.777) 100%);
+    border: 1px solid rgba(0, 0, 0, .3);
+    border-radius: 15px;
+    position: absolute;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+
+    >.magneticStrip {
+        width: 100%;
+        height: 50px;
+        background-color: black;
+        margin-top: 30px;
+    }
+}
+
+.intern {
+    padding: 20px;
+    /* border: 2px solid red; */
+}
+
+.approximation {
+    width: 30px;
+    transform: rotate(90deg);
+}
+
+.chip {
+    height: 40px;
+    position: relative;
+    left: 87%;
+    bottom: 20px;
+}
+
+.card-holder {
+    color: whitesmoke;
+
+}
+
+.card-number {
+    margin-top: 40px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    display: flex;
+}
+
+.card label {
+    font-size: 0.7rem;
+}
+
+.card-infos {
+    display: flex;
+    width: 40%;
+    justify-content: space-between;
+    color: white;
+}
+
+#credit-card {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    font-size: 1.1rem;
+    font-weight: 200;
+    color: black;
+    text-transform: uppercase;
+    /* border: 2px solid red; */
+}
+
+.number-container,
+.name-container {
+    display: flex;
+    flex-direction: column;
+    /* border: 2px solid purple; */
+}
+
+.expiration-container,
+.cvv-container {
+    width: 45%;
+    margin: 5px;
+}
+
+input {
+    border: 0;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #4f4f4f44;
+    color: black;
+    font-weight: 600;
+    font-size: 1.1rem;
+    outline: 0;
+    width: 90%;
+
+    &::placeholder {
+        color: rgba(255, 255, 255, 0.405);
+    }
+}
+
+input[type="text"]:focus {
+    border: 1 px solid #95B8D1;
+}
+
+input #valid-thru-text,
+input #cvv-text {
+    width: 80%;
+}
+
+input[type="submit"] {
+    width: 95%;
+    background-color: #3972b0;
+    cursor: pointer;
+    color: white;
+
+    /* &:hover{
+        background-color: #87a8b2;
+        color: #008cb1;
+    } */
+}
+
+.infos-container {
+    display: flex;
+
+}
+
+@media (max-width: 1024px) {
+    .ui {
+        flex-direction: column-reverse;
+    }
+
+    .container-left,
+    .container-right {
+        width: 100%;
+    }
+}
+
+/* //// */
+.box {
+    width: 150px;
+    height: 150px;
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    /* border: 1px solid blue; */
+
+    .last-icon{
+        display: flex;
+        flex-direction: column;
+        /* border: 2px solid red; */
+        &:hover{
+            >.bx{
+                opacity: 1;
+            }
+        }
+        >.bx{
+            transition: .5s;
+            font-size: 30px;
+            color: rgba(255, 255, 255, 0.733);
+            margin: 15px 0 0 -40px;
+            opacity: 0;
+            text-decoration: none;
+
+        }
+    }
+
+    >div {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        &:first-of-type{
+            background-color: rgba(255, 255, 255, 0.368);
+            border-radius: 87% 13% 49% 51% / 37% 53% 47% 63%;
+            animation: anime2 infinite alternate 2s;
+        }
+        &:last-of-type{
+            background-image: url(img/myimg.jpg);
+            border-radius: 35% 65% 49% 51% / 73% 23% 77% 27%;
+            background-size: cover;
+            animation: anime1 infinite alternate 2s;
+
+        }
+    }
+}
+@keyframes anime1{
+    to{
+        border-radius: 87% 13% 49% 51% / 37% 53% 47% 63%;
+    }
+}
+@keyframes anime2{
+    to{
+        border-radius: 35% 65% 49% 51% / 73% 23% 77% 27%;
+    }
+}

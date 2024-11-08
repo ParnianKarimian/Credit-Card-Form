@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Credit Card Form</title>
+</head>
+
+<body>
+    <main class="container">
+        <section class="ui">
+            <div class="container-left">
+                <form id="credit-card">
+                    <div class="number-container">
+                        <label>Card Number</label>
+                        <input autofocus type="text" name="card-number" id="card-number" maxlength="19"
+                            placeholder="1234 5678 9101 1123" required onkeypress="return event.charCode <= 57">
+                    </div>
+                    <div class="name-container">
+                        <label>Holder</label>
+                        <input type="text" name="name-text" id="name-text" maxlength="30" placeholder="ParnianKarimian"
+                            required
+                            onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123) || event.key == ''">
+                    </div>
+                    <div class="infos-container">
+                        <div class="expiration-container">
+                            <label>Valid-thru</label>
+                            <input type="text" name="Valid-thru-text" id="Valid-thru-text" maxlength="5"
+                                placeholder="05/20" required
+                                onkeypress="return event.charCode >= 48 && event.charCode <=57">
+                        </div>
+
+                        <div class="cvv-container">
+                            <label>CVV</label>
+                            <input type="text" name="cvv-text" id="cvv-text" maxlength="5" placeholder="123" required
+                                onkeypress="return event.charCode >= 48 && event.charCode <=57">
+                        </div>
+                    </div>
+                    <input type="submit" value="ADD" id="add">
+                </form>
+            </div>
+            <div class="container-right">
+                <div class="card">
+                    <div class="the-front">
+                        <div class="intern">
+                            <img src="img/aprox.png" class="approximation">
+                            <div class="card-number">
+                                <div class="number-vl">1234 5678 9101 1123</div>
+                            </div>
+                            <div class="card-holder">
+                                <label>Holder</label>
+                                <div class="name-vl">ParnianKarimian</div>
+                            </div>
+                            <div class="card-infos">
+                                <div class="exp">
+                                    <label>valid-thru</label>
+                                    <div class="expiration-vl">05/20</div>
+                                </div>
+                                <div class="cvv">
+                                    <label>CVV</label>
+                                    <div class="cvv-vl">123</div>
+                                </div>
+                            </div>
+                            <img src="img/chip.png" alt="chip" class="chip">
+                        </div>
+                    </div>
+                    <div class="the-back">
+                        <div class="magneticStrip"></div>
+                    </div>
+                </div>
+        </section>
+    </main>
+    <!-- //// -->
+    <div class="box">
+        <div></div>
+        <div></div>
+        <div class="last-icon">
+            <a href="https://www.instagram.com/parniankarimian_web?igsh=MTh0c2R4aXN6NDloYw==" class='bx bxl-instagram'></a>
+            <a href="https://github.com/ParnianKarimian" class='bx bxl-github'></a>
+            <a href="https://www.linkedin.com/in/parnian-karimian-a73855285?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" class='bx bxl-linkedin-square'></a>
+        </div>
+    </div>
+</body>
+<script src="script.js"></script>
+
+</html>
